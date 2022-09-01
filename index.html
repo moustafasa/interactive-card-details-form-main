@@ -1,51 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <!-- website icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <!-- font size -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- normalize -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- font awesom file -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- start cards cont -->
+    <div class="container">
+      <div class="cards-cont">
+        <div class="card front">
+          <div class="logo">
+            <span class="large"></span>
+            <span class="small"></span>
+          </div>
+          <div class="data">
+            <div class="card-num">
+              <span>0000</span>
+              <span>0000</span>
+              <span>0000</span>
+              <span>0000</span>
+            </div>
+            <div class="other-data">
+              <div class="name">your name</div>
+              <div class="date">
+                <span class="month">00</span> / <span class="year">00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card back">
+          <div class="qr-code"></div>
+          <div class="content">
+            <div class="cvc-value">000</div>
+            <div class="paragraph">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end cards cont -->
+      <!-- start form  -->
+      <div class="form-cont">
+        <form action="">
+          <div class="input-box name">
+            <label for="name">cardholder name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="e.g. moustafa saad"
+              name="name"
+            />
+          </div>
+          <div class="input-box num">
+            <label for="cardNumber">card number</label>
+            <input
+              type="text"
+              id="cardNumber"
+              placeholder="e.g. 1234 5678 9123 0000"
+              name="cardNumber"
+            />
+          </div>
+          <div class="input-box exp-date">
+            <label for="month">exp. date (mm/yy)</label>
+            <div class="date">
+              <input type="number" id="month" name="month" placeholder="mm" />
+              <input type="number" id="year" name="year" placeholder="yy" />
+            </div>
+          </div>
+          <div class="input-box cvc">
+            <label for="cvc">cvc</label>
+            <input type="number" id="cvc" name="cvc" placeholder="e.g. 123" />
+          </div>
+          <input type="submit" value="confirm" />
+        </form>
+      </div>
+    </div>
+    <!-- end form -->
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
