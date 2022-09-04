@@ -36,16 +36,24 @@
             <span class="small"></span>
           </div>
           <div class="data">
-            <div class="card-num">
+            <div class="card-num" data-showed="num">
               <span>0000</span>
               <span>0000</span>
               <span>0000</span>
               <span>0000</span>
             </div>
             <div class="other-data">
-              <div class="name">your name</div>
+              <div class="name" data-showed="name" data-default="your name">
+                your name
+              </div>
               <div class="date">
-                <span class="month">00</span> / <span class="year">00</span>
+                <span class="month" data-showed="month" data-default="00"
+                  >00</span
+                >
+                /
+                <span class="year" data-showed="year" data-default="00"
+                  >00</span
+                >
               </div>
             </div>
           </div>
@@ -53,7 +61,9 @@
         <div class="card back">
           <div class="qr-code"></div>
           <div class="content">
-            <div class="cvc-value">000</div>
+            <div class="cvc-value" data-showed="cvc" data-default="000">
+              000
+            </div>
             <div class="paragraph">
               <span></span>
               <span></span>
@@ -63,8 +73,8 @@
         </div>
       </div>
       <!-- end cards cont -->
-      <!-- start form  -->
       <div class="form-cont">
+        <!-- start form  -->
         <form action="">
           <div class="input-box name">
             <label for="name">cardholder name</label>
@@ -73,33 +83,71 @@
               id="name"
               placeholder="e.g. moustafa saad"
               name="name"
+              maxlength="25"
             />
+            <p class="error"></p>
           </div>
           <div class="input-box num">
-            <label for="cardNumber">card number</label>
+            <label for="num">card number</label>
             <input
               type="text"
-              id="cardNumber"
+              id="num"
               placeholder="e.g. 1234 5678 9123 0000"
-              name="cardNumber"
+              name="num"
+              maxlength="19"
             />
+            <p class="error"></p>
           </div>
           <div class="input-box exp-date">
             <label for="month">exp. date (mm/yy)</label>
             <div class="date">
-              <input type="number" id="month" name="month" placeholder="mm" />
-              <input type="number" id="year" name="year" placeholder="yy" />
+              <div class="month">
+                <input
+                  type="text"
+                  id="month"
+                  name="month"
+                  placeholder="mm"
+                  maxlength="2"
+                />
+                <p class="error"></p>
+              </div>
+              <div class="year">
+                <input
+                  type="text"
+                  id="year"
+                  name="year"
+                  placeholder="yy"
+                  maxlength="2"
+                />
+                <p class="error"></p>
+              </div>
             </div>
           </div>
           <div class="input-box cvc">
             <label for="cvc">cvc</label>
-            <input type="number" id="cvc" name="cvc" placeholder="e.g. 123" />
+            <input
+              type="text"
+              id="cvc"
+              name="cvc"
+              placeholder="e.g. 123"
+              maxlength="3"
+            />
+            <p class="error"></p>
           </div>
-          <input type="submit" value="confirm" />
+          <input type="submit" name="sub" value="confirm" />
         </form>
+        <!-- end form -->
+
+        <!-- start complete state -->
+        <div class="complete hidden">
+          <img src="images/icon-complete.svg" alt="" />
+          <h2 class="thank">thank you!</h2>
+          <p>We've added your card details</p>
+          <a href="/" class="cont">continue</a>
+        </div>
+        <!-- end complete state -->
       </div>
     </div>
-    <!-- end form -->
     <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

@@ -53,7 +53,7 @@ body {
 /* end global rules  */
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 @media (max-width: 991px) {
   .container {
@@ -65,6 +65,11 @@ body {
   background-image: url(../images/bg-main-desktop.png);
   background-size: cover;
   position: relative;
+}
+@media (max-width: 767px) {
+  .cards-cont {
+    margin-bottom: 80px;
+  }
 }
 .cards-cont .card {
   width: 400px;
@@ -80,6 +85,7 @@ body {
     top: 35px;
     left: auto;
     right: 15px;
+    width: 330px;
   }
 }
 
@@ -131,6 +137,11 @@ body {
   display: block;
   letter-spacing: 4px;
   font-size: 25px;
+}
+@media (max-width: 991px) {
+  .cards-cont .front .data .card-num span {
+    font-size: 19px;
+  }
 }
 .cards-cont .front .data .other-data {
   display: flex;
@@ -190,23 +201,29 @@ body {
   justify-content: center;
   align-items: center;
 }
-form {
-  margin-left: 300px;
+form,
+.complete {
+  margin-left: 20vw;
   margin-right: auto;
   max-width: 500px;
   padding: 20px;
+  text-align: center;
+}
+form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 @media (max-width: 991px) {
-  form {
+  form,
+  .complete {
     margin: 100px auto 0;
   }
 }
 form .input-box {
   margin-bottom: 35px;
   width: 100%;
+  text-align: left;
 }
 form .input-box label,
 form .input-box input {
@@ -244,12 +261,18 @@ form .input-box.exp-date .date {
   display: flex;
   justify-content: space-between;
 }
-form .input-box.exp-date input {
+form .input-box.exp-date .date div {
   width: calc(95% / 2);
 }
 form .input-box.exp-date,
 form .input-box.cvc {
   width: calc(93% / 2);
+}
+@media (max-width: 767px) {
+  form .input-box.exp-date,
+  form .input-box.cvc {
+    width: 100%;
+  }
 }
 
 form input[type="submit"] {
@@ -269,3 +292,29 @@ form .input-box p.error {
   font-size: 16px;
   font-weight: 500;
 }
+
+/* start complete stat */
+.complete.hidden {
+  display: none;
+}
+.complete h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 4px;
+  margin: 40px 0 10px;
+  color: var(--very-dark-violet);
+  text-shadow: 0 0 2px var(--very-dark-violet);
+}
+.complete p {
+  color: var(--dark-grayish-violet);
+  margin: 20px 0 50px;
+}
+.complete a {
+  display: block;
+  background-color: var(--very-dark-violet);
+  color: white;
+  padding: 15px 120px;
+  border-radius: 10px;
+}
+
+/* end complete state */
