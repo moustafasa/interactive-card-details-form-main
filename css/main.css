@@ -68,7 +68,7 @@ body {
 }
 @media (max-width: 767px) {
   .cards-cont {
-    margin-bottom: 80px;
+    flex-basis: 35vh;
   }
 }
 .cards-cont .card {
@@ -82,7 +82,7 @@ body {
 }
 @media (max-width: 991px) {
   .cards-cont .card {
-    top: 35px;
+    top: 10vh;
     left: auto;
     right: 15px;
     width: 330px;
